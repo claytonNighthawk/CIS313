@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;tempHead&apos; in &apos;Queue.dequeue()&apos; to &apos;oldHead&apos;&#x0D;&#x0A;- Original project: &apos;Lab1&apos;&#x0D;&#x0A;- Original element: &apos;Queue.dequeue().tempHead&apos;&#x0D;&#x0A;- Renamed element: &apos;tempHead&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;tempHead&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/&lt;{Queue.java[Queue~dequeue@tempHead!884!946!892!899!QNode\&lt;QE;&gt;;!0!false" name="oldHead" references="true" stamp="1476165785750" version="1.0"/>
-</session>
