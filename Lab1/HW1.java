@@ -1,16 +1,31 @@
+import java.util.Scanner;
 
 public class HW1 {
 	public static void main(String[] args){
-	
 		// Create a Scanner that reads system input
-		
 		// Loop over the scanner's input
 		// For each line of the input, send it to isPalindrome()
 		// If isPalindrome returns true, print "This is a Palindrome." 
 		// Otherwise print "Not a Palindrome."
-		
 		// Close the Scanner	
-
+		Scanner scanner = new Scanner(System.in);
+		int numProblems = scanner.nextInt();
+		for(int i = 0; i < numProblems; ++i){
+			String a = scanner.nextLine();
+			String b = scanner.nextLine();
+			boolean a_isPali = isPalindrome(a);
+			boolean b_isPali = isPalindrome(b);
+			if (a_isPali){
+				System.out.println("This is a Palindrome");
+			} else {
+				System.out.println("Not a Palindrome");			
+			}
+			if (b_isPali){
+				System.out.println("This is a Palindrome");
+			} else {
+				System.out.println("Not a Palindrome");
+			}
+		}
 	}
 	
 	public static boolean isPalindrome(String s){
