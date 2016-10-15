@@ -6,9 +6,8 @@ public class Queue<E> {
 	public Queue(){
 		// We want to initialize our Queue to be empty
 		// (ie) set head and tail to be null
-		head.setData(null);
-		tail.setData(null);
-		head.setNext(tail);
+		head = null;
+		tail = null;
 	}
 	
 	public void enqueue(E newData){
@@ -16,7 +15,8 @@ public class Queue<E> {
 		// Update head and tail
 		// Hint: Think about what's different for the first node added to the Queue
 		if (this.isEmpty()){
-			head.setData(newData);
+			head = new Node<E>(newData, tail);
+			tail = head;
 		}else {
 			Node<E> newElement = new Node<E>(newData, null);
 			tail.setNext(newElement);
@@ -30,18 +30,14 @@ public class Queue<E> {
 		// Hint: The order you implement the above 2 tasks matters, so use a temporary node
 	 	//	     to hold important information
 		// Hint: Return null on a empty Queue
-		Node<E> oldHead = new Node<E>(head.getData(), head.getNext());
-		head.setData(oldHead.getNext().getData());
-		head.setNext(oldHead.getNext().getNext());
+		Node<E> oldHead = head;
+		head = head.getNext();
 		return oldHead;		
 	}
 	
 	public boolean isEmpty(){
 		// Check if the Queue is empty
-		if (head == null && tail == null){
-			return true;
-		}
-		return false;
+		return head == null;
 	}
 	
 	public void printQueue(){
