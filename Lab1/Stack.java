@@ -5,7 +5,7 @@ public class Stack<E> {
 	public Stack(){
 		// We want to initialize our Stack to be empty
 		// (ie) Set top as null
-		top.setData(null);
+		top = null;
 	}
 	
 	public void push(E newData){
@@ -23,8 +23,7 @@ public class Stack<E> {
 	 	//	     to hold important information
 		// Hint: Return null on a empty stack
 		Node<E> oldTop = new Node<E>(top.getData(), top.getNext());
-		top.setData(oldTop.getNext().getData());
-		top.setNext(oldTop.getNext().getNext());
+		top = top.getNext();
 		return oldTop;
 	}
 	
