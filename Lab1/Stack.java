@@ -13,7 +13,7 @@ public class Stack<E> {
 		// Push this new node onto the stack
 		// Update top
 		Node<E> newElement = new Node<E>(newData, top);
-		this.top = newElement;
+		top = newElement;
 	}
 	
 	public Node<E> pop(){
@@ -22,7 +22,10 @@ public class Stack<E> {
 		// Hint: The order you implement the above 2 tasks matters, so use a temporary node
 	 	//	     to hold important information
 		// Hint: Return null on a empty stack
-		Node<E> oldTop = new Node<E>(top.getData(), top.getNext());
+		if (this.isEmpty()){
+			return null;
+		}
+		Node<E> oldTop = top;
 		top = top.getNext();
 		return oldTop;
 	}
@@ -34,15 +37,14 @@ public class Stack<E> {
 	
 	public void printStack(){
 		// Loop through your stack and print each Node's data
-		Node<E> x = this.top;
-		System.out.print("[");
+		Node<E> x = top;
 		while (true){
-			System.out.print(x.getData() + ", ");
-			if (x.getNext() != null){
+			System.out.print(x.getData());
+			if (x.getNext() == null){
 				break;
 			}
 			x = x.getNext();
 		}
-		System.out.println("]");
+		System.out.println("");
 	}
 }

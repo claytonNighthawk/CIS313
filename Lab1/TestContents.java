@@ -11,7 +11,9 @@ public class TestContents{
                 queue.enqueue(input.charAt(i));
                 stack.push(input.charAt(i));
             }
+            System.out.println("Stack Output: ");
             stack.printStack();
+            System.out.println("Queue Output: ");
             queue.printQueue();
         }
         scan.close();

@@ -20,7 +20,7 @@ public class Queue<E> {
 		}else {
 			Node<E> newElement = new Node<E>(newData, null);
 			tail.setNext(newElement);
-			this.tail = newElement;
+			tail = newElement;
 		}		
 	}
 	
@@ -30,6 +30,9 @@ public class Queue<E> {
 		// Hint: The order you implement the above 2 tasks matters, so use a temporary node
 	 	//	     to hold important information
 		// Hint: Return null on a empty Queue
+		if (this.isEmpty()){
+			return null;
+		}
 		Node<E> oldHead = head;
 		head = head.getNext();
 		return oldHead;		
@@ -43,14 +46,13 @@ public class Queue<E> {
 	public void printQueue(){
 		// Loop through your queue and print each Node's data
 		Node<E> x = this.head;
-		System.out.print("[");
 		while (true){
-			System.out.print(x.getData() + ", ");
-			if (x.getNext() != null){
+			System.out.print(x.getData());
+			if (x.getNext() == null){
 				break;
 			}
 			x = x.getNext();
 		}
-		System.out.println("]");
+		System.out.println("");
 	}
 }

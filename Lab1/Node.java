@@ -5,8 +5,8 @@ public class Node<E> {
 	
 	public Node(E c, Node<E> n){
 		// Set the data and next fields to the corresponding input
-		setData(c);
-		setNext(n);
+		this.setData(c);
+		this.setNext(n);
 	}
 	
 	public void setData(E d){
